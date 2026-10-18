@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-100;
+  }
+}
+
+/* Custom glowing styles & animations */
+.glow-text-gold {
+  text-shadow: 0 0 12px rgba(251, 191, 36, 0.7), 0 0 24px rgba(245, 158, 11, 0.4);
+}
+
+.glow-text-pink {
+  text-shadow: 0 0 12px rgba(244, 114, 182, 0.7), 0 0 24px rgba(236, 72, 153, 0.4);
+}
+
+.glow-box-pink {
+  box-shadow: 0 0 30px rgba(236, 72, 153, 0.25), inset 0 0 15px rgba(236, 72, 153, 0.15);
+}
+
+.glow-box-gold {
+  box-shadow: 0 0 30px rgba(245, 158, 11, 0.25), inset 0 0 15px rgba(245, 158, 11, 0.15);
+}
+
+/* Candle flame animation */
+@keyframes flameFlicker {
+  0%, 100% {
+    transform: scale(1) rotate(-1deg);
+    opacity: 0.95;
+    filter: drop-shadow(0 0 8px #f59e0b) drop-shadow(0 0 15px #ef4444);
+  }
+  25% {
+    transform: scale(1.08, 0.95) rotate(2deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 10px #fbbf24) drop-shadow(0 0 18px #f97316);
+  }
+  50% {
+    transform: scale(0.96, 1.05) rotate(-2deg);
+    opacity: 0.9;
+    filter: drop-shadow(0 0 7px #f59e0b) drop-shadow(0 0 12px #ef4444);
+  }
+  75% {
+    transform: scale(1.04, 0.98) rotate(1deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 11px #fef08a) drop-shadow(0 0 20px #f97316);
+  }
+}
+
+.animate-flame {
+  animation: flameFlicker 0.6s infinite ease-in-out;
+  transform-origin: bottom center;
+}
+
+/* Smoke puff when blown out */
+@keyframes smokeRise {
+  0% {
+    opacity: 0.8;
+    transform: translateY(0) scale(0.8);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(-20px) scale(1.4) rotate(10deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40px) scale(2) rotate(-10deg);
+  }
+}
+
+.animate-smoke {
+  animation: smokeRise 1.2s forwards ease-out;
+}
+
+/* Floating animation with slight rotation */
+@keyframes balloonDrift {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-14px) rotate(3deg);
+  }
+  66% {
+    transform: translateY(-6px) rotate(-3deg);
+  }
+}
+
+.animate-balloon {
+  animation: balloonDrift 4s ease-in-out infinite;
+}
+
+/* Sparkle twinkle */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.7); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.animate-twinkle {
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}

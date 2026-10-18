@@ -1,0 +1,10 @@
+{
+  "sarah@example.com": {
+    "id": "u_5d129a71e1a0",
+    "name": "Sarah Jenkins",
+    "email": "sarah@example.com",
+    "password": "password123",
+    "savedMemories": [],
+    "createdAt": "2026-10-18T17:28:53.216Z"
+  }
+}
